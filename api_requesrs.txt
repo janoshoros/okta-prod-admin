@@ -1,0 +1,32 @@
+Role change API token 00uIquHxh7sJ5PMR24Gc3H_aszSraxYe2mgGzBuTs6
+Pass: BqJ#kzHKmID2dYDA%Q4kUFY!5
+
+
+List groups
+curl -v -X GET \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+"https://${yourOktaDomain}/api/v1/groups?q=West&limit=10"
+
+Get current user
+curl -v -X GET \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Cookie: ${okta_session_cookie}" \
+"https://${yourOktaDomain}/api/v1/users/me"
+
+Find user
+curl -v -X GET \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+"https://${yourOktaDomain}/api/v1/users?q=eric&limit=1"
+
+Add user to a group
+curl -v -X PUT \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-H "Authorization: SSWS ${api_token}" \
+"https://${yourOktaDomain}/api/v1/groups/00g1fanEFIQHMQQJMHZP/users/00u1f96ECLNVOKVMUSEA"
+
